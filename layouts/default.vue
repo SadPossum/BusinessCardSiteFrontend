@@ -10,7 +10,7 @@
       <v-spacer />
     </v-app-bar>
 
-    <v-parallax src="/img/background12.png">
+    <v-parallax src="/img/background.png">
       <v-main>
         <v-container>
           <slot />
