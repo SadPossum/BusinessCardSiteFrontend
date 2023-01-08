@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar class="px-3" flat>
+    <!-- <v-app-bar class="px-3" flat>
       <v-spacer />
       <v-tabs centered>
         <v-tab v-for="link in links" :to="link.link" :key="link.name">
@@ -8,7 +8,7 @@
         </v-tab>
       </v-tabs>
       <v-spacer />
-    </v-app-bar>
+    </v-app-bar> -->
 
     <v-parallax src="/img/background.png">
       <v-main>
@@ -24,10 +24,8 @@
 </template>
 
 <script setup>
-const links = ref([
-  { name: "Home", link: "/" },
-  { name: "Dashboard", link: "/ashboard" },
-  { name: "Profile", link: "/profile" },
-  { name: "Updates", link: "/updates" },
-]);
+// const links = ref([
+//   { name: "Home", link: "/" },
+//   { name: "Blog", link: "/blog" },
+// ]);
 </script>
