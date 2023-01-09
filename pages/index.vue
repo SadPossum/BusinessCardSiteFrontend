@@ -3,7 +3,7 @@
     <v-row justify="center" align="center">
       <v-col cols="12">
         <v-row no-gutters class="pb-4" justify="center" align="center">
-          <v-col class="pt-4 pt-sm-0">
+          <v-col class="pa-4 pt-sm-0">
             <div class="text-h3">Artem Prokudanov</div>
             <div class="text-h5">Junior Fullstack C#/Js developer</div>
             <div class="pr-4 pt-4 text-h5">
@@ -24,7 +24,11 @@
             </div>
           </v-col>
           <v-col class="order-first order-sm-last">
-            <v-sheet min-height="100vh" min-width="75vh" rounded="lg" />
+            <v-img
+              min-height="100vh"
+              min-width="75vh"
+              src="/img/ProfilePhoto.png"
+            ></v-img>
           </v-col>
         </v-row>
 
@@ -55,7 +59,7 @@
           <v-timeline
             align="start"
             justify="center"
-            class="pl-4 pl-md-0"
+            class="px-4 px-md-0"
             :density="$vuetify.display.smAndDown ? 'compact' : 'default'"
             :side="$vuetify.display.smAndDown ? 'end' : undefined"
           >
