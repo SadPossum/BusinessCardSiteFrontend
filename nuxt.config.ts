@@ -1,8 +1,5 @@
 export default defineNuxtConfig({
-  css: [
-    "vuetify/lib/styles/main.sass",
-    "@mdi/font/css/materialdesignicons.min.css",
-  ],
+  css: ["vuetify/lib/styles/main.sass", "@mdi/font/css/materialdesignicons.min.css"],
   build: {
     transpile: ["vuetify"],
   },
@@ -10,5 +7,8 @@ export default defineNuxtConfig({
     define: {
       "process.env.DEBUG": false,
     },
+  },
+  head: {
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 });

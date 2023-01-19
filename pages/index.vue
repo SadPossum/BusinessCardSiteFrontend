@@ -27,7 +27,7 @@
             <v-img
               min-height="100vh"
               min-width="75vh"
-              src="/img/ProfilePhoto.png"
+              src="/img/profile-photo.png"
             ></v-img>
           </v-col>
         </v-row>
