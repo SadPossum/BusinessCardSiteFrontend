@@ -5,51 +5,26 @@
         <v-row no-gutters class="pb-4" justify="center" align="center">
           <v-col class="pa-4 pt-sm-0">
             <div class="text-h3">Artem Prokudanov</div>
-            <div class="text-h5">Junior Fullstack C#/Js developer</div>
+            <div class="text-h5">Fullstack C#/Js developer</div>
             <div class="pr-4 pt-4 text-h5">
-              <div class="pb-4">
-                Dynamic and motivated fullstack developer with 2 years of
-                experience in commercial development.
-              </div>
+              <div class="pb-4">Dynamic and motivated fullstack developer with 2 years of experience in commercial development.</div>
 
-              <div class="pb-4">
-                Skilled in C# (ASP.NET,PF, Xamarin, and Entity Framework),
-                JavaScript (Vue.js), and SQL with Microsoft Server.
-              </div>
+              <div class="pb-4">Skilled in C# (ASP.NET,PF, Xamarin, and Entity Framework), JavaScript (Vue.js), and SQL with Microsoft Server.</div>
 
-              <div class="pb-4">
-                Proficient in using Git and GitHub for version control and
-                project collaboration.
-              </div>
+              <div class="pb-4">Proficient in using Git and GitHub for version control and project collaboration.</div>
             </div>
           </v-col>
           <v-col class="order-first order-sm-last">
-            <v-img
-              min-height="100vh"
-              min-width="75vh"
-              src="/img/profile-photo.png"
-            ></v-img>
+            <v-img min-height="100vh" min-width="75vh" src="/img/profile-photo.png"></v-img>
           </v-col>
         </v-row>
 
-        <div class="text-h3 py-8 text-center">
-          Artem Prokudanov through the eyes of others
-        </div>
+        <div class="text-h3 py-8 text-center">Artem Prokudanov through the eyes of others</div>
         <v-no-ssr>
-          <div
-            :class="($vuetify.display.mdAndUp ? 'text-center' : '') + ' pt-8'"
-          >
+          <div :class="($vuetify.display.mdAndUp ? 'text-center' : '') + ' pt-8'">
             <v-tooltip :open-delay="1000" :close-delay="0">
               <template #activator="{ props }">
-                <v-btn
-                  size="x-large"
-                  icon
-                  outlined
-                  elevation="24"
-                  color="primary"
-                  v-bind="props"
-                  @click="makeReviewFormVisible()"
-                >
+                <v-btn size="x-large" icon outlined elevation="24" color="primary" v-bind="props" @click="makeReviewFormVisible()">
                   <v-icon>mdi-plus</v-icon>
                 </v-btn>
               </template>
@@ -63,17 +38,9 @@
             :density="$vuetify.display.smAndDown ? 'compact' : 'default'"
             :side="$vuetify.display.smAndDown ? 'end' : undefined"
           >
-            <v-timeline-item
-              v-for="review in reviews"
-              :key="review.id"
-              :dot-color="review ? review.color : ''"
-              size="small"
-            >
+            <v-timeline-item v-for="review in reviews" :key="review.id" :dot-color="review ? review.color : ''" size="small">
               <div>
-                <h2
-                  class="mt-n1 headline font-weight-light"
-                  :style="`color: ${review ? review.color : ''}`"
-                >
+                <h2 class="mt-n1 headline font-weight-light" :style="`color: ${review ? review.color : ''}`">
                   {{ review ? review.authorName : "" }}
                 </h2>
                 <div v-if="review ? review.authorInformation : ''">
@@ -111,7 +78,9 @@ function makeReviewFormVisible() {
 }
 
 async function loadData() {
-  const response = await $fetch("http://localhost:5000/review");
+  debugger;
+  const response = await useApiFetch("review");
+
   response.sort((a, b) => (a.id < b.id ? 1 : -1));
   const reviewsWithColor = response.map((a) => ({
     ...a,

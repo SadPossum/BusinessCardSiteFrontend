@@ -8,7 +8,14 @@ export default defineNuxtConfig({
       "process.env.DEBUG": false,
     },
   },
-  head: {
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+  app: {
+    head: {
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    },
+  },
+  runtimeConfig: {
+    public: {
+      baseURL: process.env.NODE_ENV === "production" ? "https://api.artemprokudanov.com" : "http://localhost:5000",
+    },
   },
 });
