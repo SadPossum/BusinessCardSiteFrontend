@@ -82,7 +82,6 @@ function makeReviewFormVisible() {
 }
 
 async function loadData() {
-  debugger;
   const response = await useApiFetch("review");
 
   response.sort((a, b) => (a.id < b.id ? 1 : -1));
