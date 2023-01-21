@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      baseURL: process.env.NODE_ENV === "production" ? "https://api.artemprokudanov.com" : "http://localhost:5000",
+      baseURL: process.env.NODE_ENV === "production" ? "https://artemprokudanov.com/api" : "http://localhost:5000",
     },
   },
 });
