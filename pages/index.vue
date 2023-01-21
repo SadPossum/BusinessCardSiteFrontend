@@ -21,26 +21,30 @@
 
         <div class="text-h3 py-8 text-center">Artem Prokudanov through the eyes of others</div>
         <v-no-ssr>
-          <div :class="($vuetify.display.mdAndUp ? 'text-center' : '') + ' pt-8'">
-            <v-tooltip :open-delay="1000" :close-delay="0">
-              <template #activator="{ props }">
-                <v-btn size="x-large" icon outlined elevation="24" color="primary" v-bind="props" @click="makeReviewFormVisible()">
-                  <v-icon>mdi-plus</v-icon>
-                </v-btn>
-              </template>
-              <span>Add value</span>
-            </v-tooltip>
-          </div>
           <v-timeline
             align="start"
             justify="center"
             class="px-4 px-md-0"
             :density="$vuetify.display.smAndDown ? 'compact' : 'default'"
             :side="$vuetify.display.smAndDown ? 'end' : undefined"
+            truncate-line="both"
+            max-width="95%"
           >
-            <v-timeline-item v-for="review in reviews" :key="review.id" :dot-color="review ? review.color : ''" size="small">
-              <div>
-                <h2 class="mt-n1 headline font-weight-light" :style="`color: ${review ? review.color : ''}`">
+            <v-timeline-item class="mb-12" size="80">
+              <template v-slot:icon>
+                <v-tooltip :open-delay="1000" :close-delay="0">
+                  <template #activator="{ props }">
+                    <v-btn size="x-large" icon outlined elevation="24" color="primary" v-bind="props" @click="makeReviewFormVisible()">
+                      <v-icon size="large">mdi-plus</v-icon>
+                    </v-btn>
+                  </template>
+                  <span>Add value</span>
+                </v-tooltip>
+              </template>
+            </v-timeline-item>
+            <v-timeline-item v-for="review in reviews" :key="review.id" :dot-color="review ? review.color : ''" size="small" max-width="95%">
+              <div class="text-wrap">
+                <h2 class="mt-n1 headline font-weight-light text-wrap" :style="`color: ${review ? review.color : ''}`">
                   {{ review ? review.authorName : "" }}
                 </h2>
                 <div v-if="review ? review.authorInformation : ''">
