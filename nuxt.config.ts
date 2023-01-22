@@ -11,6 +11,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      title: "Artem Prokudanov",
     },
   },
   runtimeConfig: {
